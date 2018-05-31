@@ -24,7 +24,7 @@
     <Button fx:id="buttonFive" maxHeight="Infinity" maxWidth="Infinity"   text="5" GridPane.columnIndex="1" GridPane.rowIndex="3" onAction="#clickDigit"/>
     <Button fx:id="buttonSix" maxHeight="Infinity" maxWidth="Infinity"   text="6" GridPane.columnIndex="2" GridPane.rowIndex="3" onAction="#clickDigit"/>
     <Button fx:id="buttonMultiply" maxHeight="Infinity" maxWidth="Infinity"   text="×" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-    <Button fx:id="buttonFraction" maxHeight="Infinity" maxWidth="Infinity"   text="1/x" GridPane.columnIndex="4" GridPane.rowIndex="3" onAction="#getFraction" />
+    <Button fx:id="buttonFraction" maxHeight="Infinity" maxWidth="Infinity"   text="1/x" GridPane.columnIndex="4" GridPane.rowIndex="3" onAction="#buttonFractionClick" />
     <Button fx:id="buttonOne" maxHeight="Infinity" maxWidth="Infinity"   text="1" GridPane.columnIndex="0" GridPane.rowIndex="4" onAction="#clickDigit"/>
     <Button fx:id="buttonTwo" maxHeight="Infinity" maxWidth="Infinity"   text="2" GridPane.columnIndex="1" GridPane.rowIndex="4" onAction="#clickDigit"/>
     <Button fx:id="buttonThree" maxHeight="Infinity" maxWidth="Infinity"   text="3" GridPane.columnIndex="2" GridPane.rowIndex="4" onAction="#clickDigit"/>

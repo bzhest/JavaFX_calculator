@@ -5,23 +5,23 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class CalculatorController {
+public class CalculatorController implements Display {
     @FXML
     private TextField display;
-    private Boolean isLastClickedDigit = false;
+    private Calculator calculator;
 
-    public double getNumber() {
-        return Double.parseDouble(getDisplayedNumber());
+    public CalculatorController(){
+        calculator = new Calculator(this);
     }
 
-    public void setNumber(double number) {
-        setDisplayedNumber(String.valueOf(number));
-    }
 
+
+    @Override
     public String getDisplayedNumber() {
         return display.getText();
     }
 
+    @Override
     public void setDisplayedNumber(String displayedNumber) {
         display.setText(displayedNumber);
     }
@@ -32,39 +32,37 @@ public class CalculatorController {
     public void clickDigit(ActionEvent actionEvent) {
         Button button = (Button) actionEvent.getSource();
         String digit = button.getText();
-        if (isLastClickedDigit) {
-            setDisplayedNumber(getDisplayedNumber() + digit);
-        } else {
-            setDisplayedNumber(digit);
-        }
-        isLastClickedDigit = true;
-        System.out.println("Displayed number is " + getDisplayedNumber());
+        calculator.showDigit(digit);
     }
+
+
 
     public void buttonClear(ActionEvent actionEvent) {
-        setNumber(0);
-        isLastClickedDigit = false;
+        calculator.clear();
     }
+
+
 
     public void buttonCommaClick(ActionEvent actionEvent) {
-        if (!getDisplayedNumber().contains(",") && !getDisplayedNumber().contains(".")) {
-            setDisplayedNumber(getDisplayedNumber() + ",");
-        }
-        isLastClickedDigit = true;
+        calculator.clickComma();
     }
+
+
 
     public void buttonNegate(ActionEvent actionEvent) {
-        double newNumber = getNumber() * -1;
-        setNumber(newNumber);
+        calculator.doNigate();
     }
+
 
     public void buttonSqrtClick(ActionEvent actionEvent) {
-        double newNumber = Math.sqrt(getNumber());
-        setNumber(newNumber);
+        calculator.clickSqrt();
     }
 
-    public void getFraction(ActionEvent actionEvent) {
-        double newNumber = 1/getNumber();
-        setNumber(newNumber);
+
+
+    public void buttonFractionClick(ActionEvent actionEvent) {
+        calculator.getFraction();
     }
+
+
 }
