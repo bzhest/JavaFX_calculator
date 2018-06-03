@@ -8,8 +8,11 @@ public class Calculator {
     private final Display display;
     private Boolean isLastClickedDigit = false;
 
+    public Boolean isLastClickedDigit() {
+        return isLastClickedDigit;
+    }
 
-    public Calculator(Display display){
+    public Calculator(Display display) {
         this.display = display;
     }
 
@@ -36,7 +39,7 @@ public class Calculator {
     }
 
     public void getFraction() {
-        double newNumber = 1/getNumber();
+        double newNumber = 1 / getNumber();
         setNumber(newNumber);
     }
 
@@ -45,7 +48,7 @@ public class Calculator {
         setNumber(newNumber);
     }
 
-    public void  doNigate() {
+    public void doNigate() {
         double newNumber = getNumber() * -1;
         setNumber(newNumber);
     }
